@@ -2,6 +2,7 @@ const theme = {
   DarkTheme: {
     colors: {
       mainBackgroundColor: "#708090",
+      subBackgroundColor: "whiteSmoke",
       mainTextColor: "white",
       subTextColor: "white",
       secondary: "navy",
@@ -13,6 +14,7 @@ const theme = {
   LightTheme: {
     colors: {
       mainBackgroundColor: "white",
+      subBackgroundColor: "whiteSmoke",
       mainTextColor: "black",
       subTextColor: "white",
       secondary: "lightCyan",

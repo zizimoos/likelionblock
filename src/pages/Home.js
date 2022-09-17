@@ -5,12 +5,15 @@ import styled from "styled-components";
 import { BiChevronRight } from "react-icons/bi";
 import { BiChevronDown } from "react-icons/bi";
 
-import Content01 from "../components/Content_01";
-import Content02 from "../components/Content_02";
-import Content03 from "../components/Content_03";
+import Content01 from "./Content_01";
+import Content02 from "./Content_02";
+import Content03 from "./Content_03";
+
+import SubTab01 from "../components/SubTab_01";
 
 import Section01 from "../components/content_01/Section_01";
 import Section02 from "../components/content_01/Section_02";
+import theme from "../theme";
 
 // import Content from "../components/Content";
 // import LeftDirectory from "../components/LeftDirectory";
@@ -23,10 +26,13 @@ const Container = styled.div`
 `;
 const Tabs = styled.div`
   width: 300px;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  position: fixed;
   font-size: 20px;
+  background-color: ${(props) => theme.LightTheme.colors.mainBackgroundColor};
 `;
 const Tab = styled.div`
   width: 100%;
@@ -74,27 +80,7 @@ function Home(props) {
               BLOCKCHAIN
             </Link>
           </LinkContainer>
-          {fall01 ? (
-            <SubTab>
-              <div>
-                <Link to={`/content-01/section-01`}>What is Blockchain?</Link>
-              </div>
-              <div>
-                <Link to={`/content-01/section-02`}>Structure</Link>
-              </div>
-              <div>
-                <Link to={`/content-01/section-02`}>Transaction</Link>
-              </div>
-              <div>
-                <Link to={`/content-01/section-02`}>Mining</Link>
-              </div>
-              <div>
-                <Link to={`/content-01/section-02`}>FAQ</Link>
-              </div>
-            </SubTab>
-          ) : (
-            <></>
-          )}
+          {fall01 ? <SubTab01 /> : <></>}
         </Tab>
         <Tab>
           <div onClick={() => setFall02(!fall02)}>
